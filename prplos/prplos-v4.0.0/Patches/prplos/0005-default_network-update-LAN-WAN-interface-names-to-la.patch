@@ -1,0 +1,29 @@
+From fd482dd87d93cd86dfa5f38efd747f714158a292 Mon Sep 17 00:00:00 2001
+From: Dineshkumar Loganathan <dineshloganathan395@gmail.com>
+Date: Thu, 26 Jun 2025 16:46:52 +0530
+Subject: [PATCH 5/5] default_network: update LAN/WAN interface names to 'lan1'
+ and 'wan'
+
+Signed-off-by: Dineshkumar Loganathan <dineshloganathan395@gmail.com>
+---
+ package/base-files/files/etc/board.d/98-default_network | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/package/base-files/files/etc/board.d/98-default_network b/package/base-files/files/etc/board.d/98-default_network
+index 49d2a3b354..d297ad503b 100644
+--- a/package/base-files/files/etc/board.d/98-default_network
++++ b/package/base-files/files/etc/board.d/98-default_network
+@@ -8,8 +8,8 @@ board_config_update
+ 
+ json_is_a network object && exit 0
+ 
+-ucidef_set_interface_lan 'eth0'
+-[ -d /sys/class/net/eth1 ] && ucidef_set_interface_wan 'eth1'
++ucidef_set_interface_lan 'lan1'
++[ -d /sys/class/net/wan ] && ucidef_set_interface_wan 'wan'
+ 
+ board_config_flush
+ 
+-- 
+2.43.0
+

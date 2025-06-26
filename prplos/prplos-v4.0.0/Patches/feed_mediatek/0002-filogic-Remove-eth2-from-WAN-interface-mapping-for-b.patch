@@ -1,0 +1,27 @@
+From 7feadc7b6ea810e23732bc61d71e9eec55056204 Mon Sep 17 00:00:00 2001
+From: Dineshkumar Loganathan <dineshloganathan395@gmail.com>
+Date: Thu, 26 Jun 2025 16:40:59 +0530
+Subject: [PATCH 2/2] filogic: Remove eth2 from WAN interface mapping for
+ bpi-r4
+
+Signed-off-by: Dineshkumar Loganathan <dineshloganathan395@gmail.com>
+---
+ mediatek/filogic/base-files/etc/board.d/02_network | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/mediatek/filogic/base-files/etc/board.d/02_network b/mediatek/filogic/base-files/etc/board.d/02_network
+index 3440cae..bfdb06a 100644
+--- a/mediatek/filogic/base-files/etc/board.d/02_network
++++ b/mediatek/filogic/base-files/etc/board.d/02_network
+@@ -73,7 +73,7 @@ mediatek_setup_interfaces()
+ 		;;
+ 	bananapi,bpi-r4|\
+ 	bananapi,bpi-r4-poe)
+-		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 eth1" "wan eth2"
++		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 eth1" "wan"
+ 		;;
+ 	comfast,cf-e393ax)
+ 		ucidef_set_interfaces_lan_wan "lan1" eth1
+-- 
+2.43.0
+

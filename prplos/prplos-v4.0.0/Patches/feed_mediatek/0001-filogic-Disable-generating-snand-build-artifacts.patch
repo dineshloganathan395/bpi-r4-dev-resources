@@ -1,0 +1,36 @@
+From 5d544e20faa3e5e5aa8a9a580155e5eed5e2ce77 Mon Sep 17 00:00:00 2001
+From: Dineshkumar Loganathan <dineshloganathan395@gmail.com>
+Date: Mon, 23 Jun 2025 20:49:12 +0530
+Subject: [PATCH 1/2] filogic: Disable generating snand build artifacts
+
+Signed-off-by: Dineshkumar Loganathan <dineshloganathan395@gmail.com>
+---
+ mediatek/image/filogic.mk | 5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+diff --git a/mediatek/image/filogic.mk b/mediatek/image/filogic.mk
+index 43ff7ca..aa8da5f 100644
+--- a/mediatek/image/filogic.mk
++++ b/mediatek/image/filogic.mk
+@@ -451,8 +451,7 @@ define Device/bananapi_bpi-r4-common
+   KERNEL_INITRAMFS_SUFFIX := -recovery.itb
+   ARTIFACTS := \
+ 	       emmc-preloader.bin emmc-bl31-uboot.fip \
+-	       sdcard.img.gz \
+-	       snand-preloader.bin snand-bl31-uboot.fip
++	       sdcard.img.gz
+   ARTIFACT/emmc-preloader.bin	:= mt7988-bl2 emmc-comb
+   ARTIFACT/emmc-bl31-uboot.fip	:= mt7988-bl31-uboot $$(DEVICE_NAME)-emmc
+   ARTIFACT/snand-preloader.bin	:= mt7988-bl2 spim-nand-ubi-comb
+@@ -463,8 +462,6 @@ define Device/bananapi_bpi-r4-common
+ 				$(if $(CONFIG_TARGET_ROOTFS_INITRAMFS),\
+ 				   pad-to 12M | append-image-stage initramfs-recovery.itb | check-size 44m |\
+ 				) \
+-				   pad-to 44M | mt7988-bl2 spim-nand-ubi-comb |\
+-				   pad-to 45M | mt7988-bl31-uboot $$(DEVICE_NAME)-snand |\
+ 				   pad-to 51M | mt7988-bl2 emmc-comb |\
+ 				   pad-to 52M | mt7988-bl31-uboot $$(DEVICE_NAME)-emmc |\
+ 				   pad-to 56M | mt798x-gpt emmc |\
+-- 
+2.43.0
+

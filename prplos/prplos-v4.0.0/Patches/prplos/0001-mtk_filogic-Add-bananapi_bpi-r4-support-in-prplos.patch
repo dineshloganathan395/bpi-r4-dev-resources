@@ -1,0 +1,25 @@
+From 95332ab777ee1504d4f6139b67fb7226a1d36f2d Mon Sep 17 00:00:00 2001
+From: Dineshkumar Loganathan <dineshloganathan395@gmail.com>
+Date: Mon, 23 Jun 2025 18:55:46 +0530
+Subject: [PATCH 1/5] mtk_filogic: Add bananapi_bpi-r4 support in prplos
+
+Signed-off-by: Dineshkumar Loganathan <dineshloganathan395@gmail.com>
+---
+ profiles/mtk_filogic.yml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/profiles/mtk_filogic.yml b/profiles/mtk_filogic.yml
+index 36b0b013c0..428c1fae0e 100644
+--- a/profiles/mtk_filogic.yml
++++ b/profiles/mtk_filogic.yml
+@@ -1,6 +1,7 @@
+ ---
+ profiles:
+   - arcadyan_mozart
++  - bananapi_bpi-r4
+ target: mediatek
+ subtarget: filogic
+ external_target: True
+-- 
+2.43.0
+

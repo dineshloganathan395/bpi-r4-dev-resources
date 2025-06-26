@@ -1,0 +1,29 @@
+From 73a374d08598e87fd7090af53daca015ac297bd6 Mon Sep 17 00:00:00 2001
+From: Dineshkumar Loganathan <dineshloganathan395@gmail.com>
+Date: Mon, 23 Jun 2025 19:35:45 +0530
+Subject: [PATCH 4/5] mtk_filogic: Enable trusted-firmware and u-boot-mt7988
+ packages
+
+Signed-off-by: Dineshkumar Loganathan <dineshloganathan395@gmail.com>
+---
+ profiles/mtk_filogic.yml | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/profiles/mtk_filogic.yml b/profiles/mtk_filogic.yml
+index 428c1fae0e..3300038174 100644
+--- a/profiles/mtk_filogic.yml
++++ b/profiles/mtk_filogic.yml
+@@ -13,3 +13,10 @@ feeds:
+ 
+ packages:
+   - mediatek
++
++diffconfig: |
++  CONFIG_PACKAGE_trusted-firmware-a-mt7988-emmc-comb=y
++  CONFIG_PACKAGE_trusted-firmware-a-mt7988-sdmmc-comb=y
++  CONFIG_PACKAGE_u-boot-mt7988_arcadyan_mozart=y
++  CONFIG_PACKAGE_u-boot-mt7988_bananapi_bpi-r4-emmc=y
++  CONFIG_PACKAGE_u-boot-mt7988_bananapi_bpi-r4-sdmmc=y
+-- 
+2.43.0
+

@@ -1,0 +1,26 @@
+From db859929aab31b88527475d454ae973f2e9a0eba Mon Sep 17 00:00:00 2001
+From: Dineshkumar Loganathan <dineshloganathan395@gmail.com>
+Date: Mon, 23 Jun 2025 19:17:28 +0530
+Subject: [PATCH 3/5] uboot-mediatek: Disable mt7988_bananapi_bpi-r4-snand
+ temporarily
+
+Signed-off-by: Dineshkumar Loganathan <dineshloganathan395@gmail.com>
+---
+ package/boot/uboot-mediatek/Makefile | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/package/boot/uboot-mediatek/Makefile b/package/boot/uboot-mediatek/Makefile
+index 7c6a19e5a7..4d9259841f 100644
+--- a/package/boot/uboot-mediatek/Makefile
++++ b/package/boot/uboot-mediatek/Makefile
+@@ -948,7 +948,6 @@ UBOOT_TARGETS := \
+ 	mt7988_asus_zenwifi-bt8 \
+ 	mt7988_bananapi_bpi-r4-emmc \
+ 	mt7988_bananapi_bpi-r4-sdmmc \
+-	mt7988_bananapi_bpi-r4-snand \
+ 	mt7988_bananapi_bpi-r4-poe-emmc \
+ 	mt7988_bananapi_bpi-r4-poe-sdmmc \
+ 	mt7988_bananapi_bpi-r4-poe-snand \
+-- 
+2.43.0
+
